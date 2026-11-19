@@ -26,7 +26,13 @@ function watch(worker) {
 
 export function applyUpdate() {
   userAskedForUpdate = true;
-  registration?.waiting?.postMessage({ type: 'SKIP_WAITING' });
+  const waiting = registration?.waiting;
+  // No waiting worker: the new version was already switched on (for example from another
+  // tab). This tab still runs the old code, so a simple reload is all that is needed.
+  if (!waiting) { window.location.reload(); return; }
+  waiting.postMessage({ type: 'SKIP_WAITING' });
+  // Safety net: if the browser does not report the switch within 4 seconds, reload anyway.
+  setTimeout(() => window.location.reload(), 4000);
 }
 
 export function dismissUpdate() { set({ updateReady: false }); }
