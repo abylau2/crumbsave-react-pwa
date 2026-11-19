@@ -25,7 +25,7 @@ const MAX_ENTRIES = { [STATIC]: 80, [API]: 60 };
 const API_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000; // saved API answers older than a week are not used
 const NETWORK_TIMEOUT_MS = 4000;
 
-const SCOPE = self.registration.scope; // e.g. https://user.github.io/crumbsave-react-auth/
+const SCOPE = self.registration.scope; // e.g. https://user.github.io/crumbsave-react-pwa/
 const SCOPE_PATH = new URL(SCOPE).pathname;
 const SHELL_URL = new URL('./', SCOPE).href;
 const OFFLINE_URL = new URL('offline.html', SCOPE).href;

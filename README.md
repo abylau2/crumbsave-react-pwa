@@ -2,7 +2,7 @@
 
 CrumbSave is my React project for the university course. It is a demo website where people can look at "surprise bags" with cheap leftover food in Almaty. The shops and the bags are not real, and you cannot pay or pick up anything.
 
-Deployed site: https://abylau2.github.io/crumbsave-react-auth/
+Deployed site: https://abylau2.github.io/crumbsave-react-pwa/
 
 This is homework 7. I turned my homework 6 project (Firebase login and caching) into an installable PWA that also works offline. All features from the earlier homeworks are still there.
 
@@ -152,7 +152,7 @@ When the catalog is loaded, public fields (title, price, picture, ...) come from
 
 ### Install
 
-`public/manifest.webmanifest` has the name, short name, `start_url`, `scope`, `display: standalone`, theme and background colors and icons (192, 512 and a maskable one). The manifest is linked in `index.html`. All paths in it are relative, so it works under `/crumbsave-react-auth/`. In Chrome or Edge use the install icon in the address bar, or the "Install app" link in the menu.
+`public/manifest.webmanifest` has the name, short name, `start_url`, `scope`, `display: standalone`, theme and background colors and icons (192, 512 and a maskable one). The manifest is linked in `index.html`. All paths in it are relative, so it works under `/crumbsave-react-pwa/`. In Chrome or Edge use the install icon in the address bar, or the "Install app" link in the menu.
 
 ### Service worker
 
@@ -213,7 +213,7 @@ The layout works from 320 px wide, in portrait and landscape. The menu turns int
 
 ## Deploy
 
-The site is on GitHub Pages, from the `gh-pages` branch. The command `npm run build:pages` makes the API files, the build with the right base path `/crumbsave-react-auth/`, and the service worker. The Firebase variables are put in the build when it is made, so I build it on my computer where `.env.local` is. The file `404.html` helps when someone refreshes a page like `/bags/5`.
+The site is on GitHub Pages, from the `gh-pages` branch. The command `npm run build:pages` makes the API files, the build with the right base path `/crumbsave-react-pwa/`, and the service worker. The Firebase variables are put in the build when it is made, so I build it on my computer where `.env.local` is. The file `404.html` helps when someone refreshes a page like `/bags/5`.
 
 ## Images
 
